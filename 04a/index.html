@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Example</title>
+</head>
+<body>
+    <h1>Server-Sent Events Example</h1>
+    <div id="messages"></div>
+
+    <script>
+        const eventSource = new EventSource("http://localhost:3000/events");
+
+        eventSource.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            document.getElementById("messages").innerHTML += `<p>${data.message}</p>`;
+        };
+
+        eventSource.onerror = () => {
+            console.error("SSE connection lost");
+            eventSource.close();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<person>
+    <name>John Doe</name>
+    <age>30</age>
+    <email>john.doe@example.com</email>
+    <skills>
+        <skill>Python</skill>
+        <skill>JavaScript</skill>
+        <skill>Node.js</skill>
+    </skills>
+</person>
