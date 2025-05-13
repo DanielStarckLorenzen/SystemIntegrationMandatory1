@@ -7,9 +7,28 @@ This document provides all necessary information to connect to and interact with
 ## Local Setup Instructions
 
 ### Prerequisites
-- Docker installed on your system
+- Docker and Docker Compose installed on your system
 - PostgreSQL client (optional, but useful for testing)
 - DBeaver or another database management tool (optional)
+
+### Option 1: Using Docker Compose (Recommended)
+
+The repository includes a Docker Compose configuration for easy setup:
+
+```bash
+# Start the PostgreSQL container with all configurations
+docker-compose up -d
+
+# To stop the container
+docker-compose down
+
+# To stop the container and remove volumes
+docker-compose down -v
+```
+
+All database initialization, including creating tables, sample data, and setting up roles with appropriate permissions, happens automatically via the init script.
+
+### Option 2: Manual Docker Setup
 
 ### Step 1: Pull and Run PostgreSQL Docker Image
 ```bash
